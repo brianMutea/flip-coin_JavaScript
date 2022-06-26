@@ -4,27 +4,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Flip Coin</title>
   <link href="./assets/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   
 <h2 style="text-align: center;">Flip Coin</h2>
 
+<!-- SIMPLE -->
+<div class="canvas" style="display: flex; flex-direction:column; align-items: center; gap: 20px;">
+  <h1>You win after 5 Scores</h1>
+  <div class="selection">
+    Player Selected: <span id="player-selection"></span>
+  </div>
+  <div class="selection">
+    Computer Selected: <span id="computer-selection"></span>
+  </div>
+  <div id="center">
+    <div id="winner"></div>
+    <!-- <div id="image"></div> -->
+  </div>
+
+  <div>
+    <div id="player">Player: <span id="player-score">0</span></div>
+    <div id="computer">Computer: <span id="computer-score">0</span></div>
+  </div>
+  <div>
+    <h2>Guess Side:</h2>
+    <button id="heads">Heads</button>
+    <button id="tails">Tails</button>
+  </div>
+</div>
+<!-- SIMPLE -->
+
   <div class="coin-game-container">
     <div class="btns-play">
+      <strong style="color: crimson">Implementation in progress!</strong>
+
       <button id="toss-coin">Toss Coin</button>
-       <button id="reset">Reset</button>
+       <button id="reset" onclick="reset()">Reset</button>
     </div>
     <div class="computer">
       <h2>Computer</h2>
       <div class="guess-btns">
         <strong>Guess:</strong>
+        <small id="guessing"></small>
         <p id="comp-guess"></p>
-        <!-- <button id="c-guess_head" data-head>Head</button>
-        <button id="c-guess_tail" data-tail>Tail</button> -->
-      </div>
-      <strong>Score: <span id="score">0</span></strong>
+        </div>
+      <strong>Score: <span id="score" data-comp-score>0</span></strong>
     </div>
     
     <div class="coin-imgs" style="display: flex;flex-direction:column;row-gap: 10px;align-items:center;">
@@ -44,8 +71,9 @@
         <button id="p-guess" data-head>Head</button>
         <button id="p-guess" data-tail>Tail</button>
       </div>
-      <strong>Score: <span id="score">0</span></strong>
+      <strong>Score: <span id="score" data-person-score>0</span></strong>
     </div>
+    
     
   </div>
   <script src="./assets/main.js"></script>
